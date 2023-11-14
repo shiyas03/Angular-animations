@@ -1,12 +1,16 @@
 :host {
     display: inline-block;
-    padding: 20px;
+    /* padding: 20px;
     margin: 30px;
     width: 200px;
     border: 3px solid black;
-    text-align: center;
+    text-align: center; */
 }
 
-:host(.active) {
+/* :host(.active) {
     border-color: red;
+} */
+
+:host-context(.content-1) h1{
+    color: red;
 }
