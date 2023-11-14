@@ -14,3 +14,7 @@
 :host-context(.content-1) h1{
     color: red;
 }
+
+:host >>> div{
+    color: blueviolet;
+}
