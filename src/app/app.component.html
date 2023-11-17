@@ -1,7 +1,7 @@
 <!-- <app-course *ngFor="let course of courses" [course]="course" (click)="course.isActive = !course.isActive"
     [ngClass]="{active:course.isActive}"></app-course> -->
 
-    <div class="content-1">
+<!-- <div class="content-1">
         <div>
             <app-course></app-course>
         </div>
@@ -9,4 +9,15 @@
 
     <div class="content-2">
         <app-course></app-course>
-    </div>
+    </div> -->
+
+<div>
+    <button style="padding: 10px; margin: 10px; border: 0px; border-radius: 10px;"
+        routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Courses</button>
+    <button style="padding: 10px; border: 0px; border-radius: 10px;"
+        routerLink="/users" routerLinkActive="active">Users</button>
+</div>
+
+<div>
+    <router-outlet></router-outlet>
+</div>
