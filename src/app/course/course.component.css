@@ -18,3 +18,11 @@
 :host >>> div{
     color: blueviolet;
 } */
+
+
+:host{
+    display: block;
+    border: 1px solid black;
+    text-align: center;
+    box-shadow: 2px 2px gray;
+}

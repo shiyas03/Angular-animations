@@ -4,7 +4,17 @@
 <app-author></app-author> -->
 
 <div>
-    <h3>{{course.title}}</h3>
+    <h3>{{course.title}} <span style="margin-left: 5px; color: red;">{{course.status}}</span></h3>
     <p>{{course.description}}</p>
-    <hr>
+
+    <div>
+        <select name="" id="" #statusRef>
+            <option value="active">Active</option>
+            <option value="inactive">InActive</option>
+            <option value="draft">Draft</option>
+        </select>
+
+        <button (click)="onstatusChange()">update</button>
+        <button (click)="onDelete()">delete</button>
+    </div>
 </div>
