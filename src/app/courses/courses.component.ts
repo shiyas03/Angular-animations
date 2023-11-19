@@ -11,13 +11,15 @@ import { CourseServices } from './courses.service';
 export class CoursesComponent implements OnInit {
 
   courses!: Courses[]
-  selectedCourse!:number;
+  selectedCourse!: number;
+  coursesLoaded: boolean = false
 
   constructor(private courseServices: CourseServices) { }
 
   ngOnInit(): void {
     this.courseServices.getCourses().subscribe((courses) => {
       this.courses = courses
+      this.coursesLoaded = true
     })
   }
 
@@ -29,7 +31,7 @@ export class CoursesComponent implements OnInit {
     this.courses.splice(index, 1)
   }
 
-  onCourseSelected(index:number){
+  onCourseSelected(index: number) {
     this.selectedCourse = index
   }
 }

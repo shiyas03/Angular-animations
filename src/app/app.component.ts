@@ -8,6 +8,12 @@ import { Course } from './models/course.models';
 })
 export class AppComponent {
 
+  divSelected: boolean = false
+  moveSelected: boolean = false
+  onColorChange() {
+    this.divSelected = true
+  }
+
   courses: Course[] = [
     { title: 'Angular complete course', isActive: false },
     { title: 'Angular testing course', isActive: false },

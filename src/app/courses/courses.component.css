@@ -1,3 +1,37 @@
 .selected{
     background-color: antiquewhite;
 }
+
+.loading-bar{
+    width: 100px;
+    height: 20px;
+    margin: auto;
+    border: 1px solid black;
+}
+
+.loading-bar-content{
+    width: 50px;
+    height: 20px;
+    background-color: aqua;
+    animation: loading 1s linear infinite;
+}
+
+/* @keyframes loading{
+    0%{
+        width: 0px;
+    }
+
+    100%{
+        width: 100px;
+    }
+} */
+
+@keyframes loading{
+    0%{
+        transform: translateX(0px);
+    }
+
+    50%{
+        transform: translateX(50px);
+    }
+}
