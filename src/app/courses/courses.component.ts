@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Courses } from './courses.model';
 import { CourseServices } from './courses.service';
+import { triggerState } from './animation';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
-  styleUrls: ['./courses.component.css']
+  styleUrls: ['./courses.component.css'],
+  animations: [triggerState]
 })
 export class CoursesComponent implements OnInit {
 
