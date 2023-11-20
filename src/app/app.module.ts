@@ -9,6 +9,7 @@ import { AuthorComponent } from './components/author/author.component';
 import { UsersComponent } from './users/users.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AnimationComponent } from './animation/animation.component';
+import { OpenCloseComponent } from './open-close/open-close.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AnimationComponent } from './animation/animation.component';
     AuthorComponent,
     UsersComponent,
     CoursesComponent,
-    AnimationComponent
+    AnimationComponent,
+    OpenCloseComponent
   ],
   imports: [
     BrowserModule,

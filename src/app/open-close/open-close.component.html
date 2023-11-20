@@ -1,0 +1,7 @@
+<div>
+    <button (click)="onToggle()">Toggel open/close</button>
+</div>
+
+<div class="open-close-container" [@openClose]="isOpen? 'open':'close'">
+    <p>The box is now {{ isOpen? 'Open' : 'Close'}}</p>
+</div>
