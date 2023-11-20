@@ -1,15 +1,30 @@
-.selected{
-    background-color: antiquewhite;
+.selected {
+    border: 2px solid rgb(245, 4, 4);
+    animation: selectedMove 0.5s ease-out;
 }
 
-.loading-bar{
+@keyframes selectedMove {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.02);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.loading-bar {
     width: 100px;
     height: 20px;
     margin: auto;
     border: 1px solid black;
 }
 
-.loading-bar-content{
+.loading-bar-content {
     width: 50px;
     height: 20px;
     background-color: aqua;
@@ -26,12 +41,12 @@
     }
 } */
 
-@keyframes loading{
-    0%{
+@keyframes loading {
+    0% {
         transform: translateX(0px);
     }
 
-    50%{
+    50% {
         transform: translateX(50px);
     }
 }
