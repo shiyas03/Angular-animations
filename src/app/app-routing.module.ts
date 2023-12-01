@@ -5,12 +5,14 @@ import { UsersComponent } from './users/users.component';
 import { CoursesComponent } from './courses/courses.component';
 import { AnimationComponent } from './animation/animation.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
+import { VoidAnimationComponent } from './void-animation/void-animation.component';
 
 const routes: Routes = [
   { path: '', component: CoursesComponent },
   { path: 'users', component: UsersComponent },
   { path: 'animations', component: AnimationComponent },
-  { path: 'open', component: OpenCloseComponent }
+  { path: 'open', component: OpenCloseComponent },
+  { path: 'void', component: VoidAnimationComponent }
 ];
 
 @NgModule({

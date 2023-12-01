@@ -1,0 +1,4 @@
+
+<button (click)="showContent()">toggle</button>
+
+<p [@conditionalTrigger]="toggleContent? 'shown':'notshown'" *ngIf="toggleContent">now you can see toggle content</p>
