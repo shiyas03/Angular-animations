@@ -11,6 +11,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { AnimationComponent } from './animation/animation.component';
 import { OpenCloseComponent } from './open-close/open-close.component';
 import { VoidAnimationComponent } from './void-animation/void-animation.component';
+import { NewCourseComponent } from './new-course/new-course.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { VoidAnimationComponent } from './void-animation/void-animation.componen
     CoursesComponent,
     AnimationComponent,
     OpenCloseComponent,
-    VoidAnimationComponent
+    VoidAnimationComponent,
+    NewCourseComponent
   ],
   imports: [
     BrowserModule,

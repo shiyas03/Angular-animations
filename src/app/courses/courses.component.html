@@ -1,6 +1,30 @@
 <div>
     <h1>My Courses</h1>
 </div>
+
+<div>
+    <button style="padding: 10px; border:none; background-color: green; border-radius: 10px; color: white;"
+    (click)="onCreateClick()">create new</button>
+</div>
+
+<div *ngIf="this.createClicked">
+    <div>
+        <form action="">
+            <label for="">Name</label>
+            <input type="text" name="" id="">
+            <label for="">Description</label>
+            <input type="text" name="" id="">
+            <label for="">Status</label>
+            <select name="" id="">
+                <option value="">Active</option>
+                <option value="">inActive</option>
+                <option value="">Draft</option>
+            </select>
+            <button>submit</button>
+        </form>
+    </div>
+</div>
+
 <div style="margin: 30px;">
     <div class="loading-bar" *ngIf="!coursesLoaded">
         <div class="loading-bar-content"></div>
