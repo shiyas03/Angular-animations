@@ -56,6 +56,24 @@ export const curseAddState = trigger('courseTrigger', [
                     offset: 1
                 })
             ]))
+    ]),
+    transition('slideUp => slideDown', [
+        style({
+            transform: 'translateY(-100%)'
+        }),
+        animate('300ms',
+            style({
+                transform: 'translateY(0)'
+            }))
+    ]),
+    transition('slideDown => slideUp', [
+        style({
+            transform: 'translateY(0%)'
+        }),
+        animate('300ms',
+            style({
+                transform: 'translateY(-100%)'
+            }))
     ])
 ])
 
@@ -70,9 +88,6 @@ export const newCourseState = trigger('newCourseState', [
             }))
     ]),
     transition(':leave', [
-        style({
-            transform: 'translateY(0)'
-        }),
         animate('300ms ease-out',
             style({
                 transform: 'translateY(-100%)'

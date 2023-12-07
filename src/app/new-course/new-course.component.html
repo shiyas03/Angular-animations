@@ -12,7 +12,8 @@
             <option [value]="status" *ngFor="let status of statuses">{{status}}</option>
         </select>
         <br>
-        <button>submit</button>
+        <button [disabled]="!courseForm.valid"
+            [@newCourseButtonTrigger]="courseForm.valid? 'valid':'invalid'">submit</button>
         <button (click)="onCancelCourse()">cancel</button>
     </form>
 </div>

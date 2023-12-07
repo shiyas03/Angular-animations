@@ -4,11 +4,12 @@
 
 <div>
     <button style="padding: 10px; border:none; background-color: green; border-radius: 10px; color: white;"
-    (click)="onCreateClick()">create new</button>
+        (click)="onCreateClick()">create new</button>
 </div>
 
 <div style="overflow: hidden;">
-    <app-new-course *ngIf="this.createClicked" (courseCreated)="courseCreated($event)" (courseCancel)="courseCanceled()" @newCourseState></app-new-course>
+    <app-new-course *ngIf="createClicked" (courseCreated)="courseCreated($event)" (courseCancel)="courseCanceled()"
+        @newCourseState></app-new-course>
 </div>
 
 <div style="margin: 30px;">
@@ -16,7 +17,11 @@
         <div class="loading-bar-content"></div>
     </div>
     <app-course *ngFor="let course of diaplayedCourses; let i = index" [course]="course"
-        (statusUpdated)="onStatusUpdate($event,i)" (courseDelete)="onDeleteCourse(i)" (click)="onCourseSelected(i)"
+        (statusUpdated)="onStatusUpdate($event,i)" 
+        (courseDelete)="onDeleteCourse(i)" 
+        (click)="onCourseSelected(i)"
+        [@courseTrigger]="createClicked? 'slideDown':'slideUp'" 
+        (@courseTrigger.done)="onCourseAddDone($event,i)"
         [@selectedTrigger]="selectedCourse ==i ? 'selected':'default'" style="margin: 10px;"
-        @courseTrigger (@courseTrigger.done)="onCourseAddDone($event,i)"></app-course>
+        ></app-course>
 </div>
