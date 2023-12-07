@@ -7,8 +7,8 @@
     (click)="onCreateClick()">create new</button>
 </div>
 
-<div *ngIf="this.createClicked">
-    <app-new-course (courseCreated)="courseCreated($event)" (courseCancel)="courseCanceled()"></app-new-course>
+<div style="overflow: hidden;">
+    <app-new-course *ngIf="this.createClicked" (courseCreated)="courseCreated($event)" (courseCancel)="courseCanceled()" @newCourseState></app-new-course>
 </div>
 
 <div style="margin: 30px;">

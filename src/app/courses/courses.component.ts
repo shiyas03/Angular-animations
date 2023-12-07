@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Courses } from './courses.model';
 import { CourseServices } from './courses.service';
-import { curseAddState, triggerState } from './animation';
+import { curseAddState, newCourseState, triggerState } from './animation';
 import { AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
-  animations: [triggerState, curseAddState]
+  animations: [triggerState, curseAddState, newCourseState]
 })
 export class CoursesComponent implements OnInit {
 
@@ -55,7 +55,7 @@ export class CoursesComponent implements OnInit {
 
   onCourseAddDone(event: AnimationEvent, i: number) {
     console.log("working");
-    
+
     if (event.fromState !== 'void') {
       return
     }

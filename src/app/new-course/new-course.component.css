@@ -1,3 +1,7 @@
+:host{
+    display: block;
+}
+
 input,select{
     padding: 5px;
     margin: 2px;
