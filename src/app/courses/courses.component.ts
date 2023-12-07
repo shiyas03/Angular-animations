@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Courses } from './courses.model';
 import { CourseServices } from './courses.service';
 import { curseAddState, triggerState } from './animation';
+import { AnimationEvent } from '@angular/animations';
 
 @Component({
   selector: 'app-courses',
@@ -12,6 +13,7 @@ import { curseAddState, triggerState } from './animation';
 export class CoursesComponent implements OnInit {
 
   courses!: Courses[]
+  diaplayedCourses: Courses[] = []
   selectedCourse!: number;
   coursesLoaded: boolean = false
   createClicked: boolean = false
@@ -22,6 +24,7 @@ export class CoursesComponent implements OnInit {
     this.courseServices.getCourses().subscribe((courses) => {
       this.courses = courses
       this.coursesLoaded = true
+      this.diaplayedCourses.push(this.courses[0])
     })
   }
 
@@ -48,5 +51,19 @@ export class CoursesComponent implements OnInit {
 
   courseCanceled() {
     this.createClicked = false
+  }
+
+  onCourseAddDone(event: AnimationEvent, i: number) {
+    console.log("working");
+    
+    if (event.fromState !== 'void') {
+      return
+    }
+
+    if (this.courses.length > i + 1) {
+      this.diaplayedCourses.push(this.courses[i + 1])
+    } else {
+      this.diaplayedCourses = this.courses
+    }
   }
 }

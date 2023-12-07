@@ -1,4 +1,4 @@
-import { animate, state, style, transition, trigger } from "@angular/animations";
+import { animate, keyframes, state, style, transition, trigger } from "@angular/animations";
 
 export const triggerState = trigger('selectedTrigger', [
     state('defalut', style({
@@ -21,21 +21,40 @@ export const triggerState = trigger('selectedTrigger', [
 
 export const curseAddState = trigger('courseTrigger', [
     transition(':enter', [
-        style({
-            opacity: 0,
-            transform: 'translateX(-100%)'
-        }),
         animate('500ms ease-in',
-            style({
-                opacity: 1,
-                transform: 'translateX(0)'
-            }))
+            keyframes([
+                style({
+                    opacity: 0,
+                    transform: 'translateX(-100%)',
+                    offset: 0
+                }),
+                style({
+                    opacity: 1,
+                    transform: 'translateX(15%)',
+                    offset: 0.4
+                }),
+                style({
+                    transform: 'translateX(0%)',
+                    offset: 1
+                })
+            ]))
     ]),
     transition(':leave', [
         animate('500ms ease-in',
-            style({
-                opacity: 0,
-                transform: 'translateX(100%)'
-            }))
+            keyframes([
+                style({
+                    transform: 'translateX(0%)',
+                    offset: 0
+                }),
+                style({
+                    transform: 'translateX(-15%)',
+                    offset: 0.6
+                }),
+                style({
+                    opacity: 0,
+                    transform: 'translateX(100%)',
+                    offset: 1
+                })
+            ]))
     ])
 ])
