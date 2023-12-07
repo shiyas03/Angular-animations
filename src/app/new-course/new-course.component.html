@@ -1,1 +1,18 @@
-<p>new-course works!</p>
+<div>
+    <form [formGroup]="courseForm" (ngSubmit)="onCourseCreate()">
+        <label for="">Name</label>
+        <input type="text" name="" id="" formControlName="name">
+        <br>
+        <label for="">Description</label>
+        <input type="text" name="" id="" formControlName="description">
+        <br>
+        <label for="">Status</label>
+        <select name="" id="" formControlName="status">
+            <option value="" selected disabled>Select status</option>
+            <option [value]="status" *ngFor="let status of statuses">{{status}}</option>
+        </select>
+        <br>
+        <button>submit</button>
+        <button (click)="onCancelCourse()">cancel</button>
+    </form>
+</div>

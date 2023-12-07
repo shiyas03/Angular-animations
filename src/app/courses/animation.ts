@@ -8,7 +8,7 @@ export const triggerState = trigger('selectedTrigger', [
     })),
     state('selected', style({
         border: '2px solid black',
-        padding:'10px',
+        padding: '10px',
         backgroundColor: 'lightblue'
     })),
     transition('default => selected', [style({
@@ -17,4 +17,25 @@ export const triggerState = trigger('selectedTrigger', [
     transition('selected => default', [style({
         border: '2px solid black'
     }), animate('300ms ease-out')]),
+])
+
+export const curseAddState = trigger('courseTrigger', [
+    transition(':enter', [
+        style({
+            opacity: 0,
+            transform: 'translateX(-100%)'
+        }),
+        animate('500ms ease-in',
+            style({
+                opacity: 1,
+                transform: 'translateX(0)'
+            }))
+    ]),
+    transition(':leave', [
+        animate('500ms ease-in',
+            style({
+                opacity: 0,
+                transform: 'translateX(100%)'
+            }))
+    ])
 ])

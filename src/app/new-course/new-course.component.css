@@ -1,0 +1,22 @@
+input,select{
+    padding: 5px;
+    margin: 2px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+label{
+    margin-left: 20px;
+}
+button{
+    padding: 5px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+}
+
+form{
+    margin-left: 20px;
+}

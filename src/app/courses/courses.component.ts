@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Courses } from './courses.model';
 import { CourseServices } from './courses.service';
-import { triggerState } from './animation';
+import { curseAddState, triggerState } from './animation';
 
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
   styleUrls: ['./courses.component.css'],
-  animations: [triggerState]
+  animations: [triggerState, curseAddState]
 })
 export class CoursesComponent implements OnInit {
 
@@ -40,5 +39,14 @@ export class CoursesComponent implements OnInit {
 
   onCreateClick() {
     this.createClicked = !this.createClicked
+  }
+
+  courseCreated(event: Courses) {
+    this.courses.unshift(event)
+    this.createClicked = false
+  }
+
+  courseCanceled() {
+    this.createClicked = false
   }
 }
