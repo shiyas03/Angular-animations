@@ -16,12 +16,13 @@
     <div class="loading-bar" *ngIf="!coursesLoaded">
         <div class="loading-bar-content"></div>
     </div>
-    <app-course *ngFor="let course of diaplayedCourses; let i = index" [course]="course"
-        (statusUpdated)="onStatusUpdate($event,i)" 
-        (courseDelete)="onDeleteCourse(i)" 
-        (click)="onCourseSelected(i)"
-        [@courseTrigger]="createClicked? 'slideDown':'slideUp'" 
-        (@courseTrigger.done)="onCourseAddDone($event,i)"
-        [@selectedTrigger]="selectedCourse ==i ? 'selected':'default'" style="margin: 10px;"
-        ></app-course>
+    <div [@listStateTigger]="courses.length">
+        <app-course *ngFor="let course of courses; let i = index" [course]="course"
+            (statusUpdated)="onStatusUpdate($event,i)" 
+            (courseDelete)="onDeleteCourse(i)" 
+            (click)="onCourseSelected(i)"
+            [@courseTrigger]="createClicked? 'slideDown':'slideUp'" 
+            [@selectedTrigger]="selectedCourse ==i ? 'selected':'default'" style="margin: 10px;"
+            ></app-course>
+    </div>
 </div>
