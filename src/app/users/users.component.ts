@@ -5,8 +5,8 @@ import { routeAnimationState, routerSlideAnimationState } from '../shared/router
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css'],
-  animations: [routeAnimationState,routerSlideAnimationState]
+  animations: [routeAnimationState({ opacity: 0, duration: '2000ms' }), routerSlideAnimationState]
 })
 export class UsersComponent {
-  @HostBinding('@routerSlideAnimationTrigger') routerAnimation = true
+  @HostBinding('@routeAnimationTrigger') routerAnimation = true
 }
