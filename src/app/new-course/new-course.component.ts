@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Courses } from '../courses/courses.model';
-import { buttonTrigger } from './animate';
+import { buttonTrigger, courseFormState } from './animate';
 
 @Component({
   selector: 'app-new-course',
   templateUrl: './new-course.component.html',
   styleUrls: ['./new-course.component.css'],
-  animations : [buttonTrigger]
+  animations: [buttonTrigger, courseFormState]
 })
 export class NewCourseComponent {
 
@@ -16,17 +16,17 @@ export class NewCourseComponent {
 
   courseForm = new FormGroup({
     name: new FormControl('', Validators.required),
-    description: new FormControl('',Validators.required),
-    status: new FormControl('',Validators.required)
+    description: new FormControl('', Validators.required),
+    status: new FormControl('', Validators.required)
   })
 
   statuses = ['active', 'inActive', 'draft']
 
-  onCourseCreate(){
+  onCourseCreate() {
     this.courseCreated.emit(this.courseForm.value as Courses)
   }
 
-  onCancelCourse(){
+  onCancelCourse() {
     this.courseCancel.emit()
   }
 }

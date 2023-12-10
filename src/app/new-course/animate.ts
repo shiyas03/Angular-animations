@@ -1,4 +1,4 @@
-import { animate, group, state, style, transition, trigger } from "@angular/animations";
+import { animate, group, query, state, style, transition, trigger } from "@angular/animations";
 
 export const buttonTrigger = trigger('newCourseButtonTrigger', [
     state('valid',
@@ -32,4 +32,14 @@ export const buttonTrigger = trigger('newCourseButtonTrigger', [
                 }))
         ])
     ]),
+])
+
+export const courseFormState = trigger('courseFormTrigger', [
+    transition('* => *', [
+        query('.ng-invalid:focus', [
+            animate(300, style({
+                backgroundColor: 'red'
+            }))
+        ], { optional: true })
+    ])
 ])
