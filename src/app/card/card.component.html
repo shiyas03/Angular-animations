@@ -3,9 +3,12 @@
         <button (click)="showCard = !showCard">Show card</button>
         <hr>
     </div>
-    <div class="card" *ngIf="showCard" @cardAnimationTrigger>
+    <div class="card" *ngIf="showCard" [@cardAnimationTrigger]="showParagraph">
         <div class="card-header">Card header</div>
-        <div class="card-body">This is card body</div>
+        <div class="card-body">This is card body
+            <p *ngIf="showParagraph">new paragraph</p>
+            <button (click)="showParagraph = !showParagraph">toggle</button>
+        </div>
         <div class="card-footer">Card footer</div>
     </div>
  </div>
