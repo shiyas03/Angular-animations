@@ -1,11 +1,35 @@
 import { Component } from '@angular/core';
 import { Course } from './models/course.models';
-import { AnimationBuilder, animate, style } from '@angular/animations';
+import { AnimationBuilder, animate, animateChild, group, query, style, transition, trigger } from '@angular/animations';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('routeState', [
+      transition('* => *', [
+        group([
+          query(':enter', [
+            animateChild(),
+            style({
+              opacity: 0,
+              transform: 'translateY(-100%)'
+            }),
+            animate(500)
+          ], { optional: true }),
+          query(':leave', [
+            animate(500,
+              style({
+                opacity: 0,
+                transform: 'translateY(100%)'
+              }))
+          ], { optional: true })
+        ])
+      ])
+    ])
+  ]
 })
 export class AppComponent {
 
@@ -38,5 +62,13 @@ export class AppComponent {
     ])
     const player = animation.create(elemnt)
     player.play()
+  }
+
+  getAnimationData(outlet: RouterOutlet) {
+    const routeData = outlet.activatedRouteData['animation']
+    if (!routeData) {
+      return 'homePage'
+    }
+    return routeData
   }
 }

@@ -9,8 +9,8 @@ import { VoidAnimationComponent } from './void-animation/void-animation.componen
 import { CardComponent } from './card/card.component';
 
 const routes: Routes = [
-  { path: '', component: CoursesComponent },
-  { path: 'users', component: UsersComponent },
+  { path: '', component: CoursesComponent, data: { animation: 'homePage' } },
+  { path: 'users', component: UsersComponent, data: { animation: 'userPage' } },
   { path: 'animations', component: AnimationComponent },
   { path: 'open', component: OpenCloseComponent },
   { path: 'void', component: VoidAnimationComponent },
