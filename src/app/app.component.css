@@ -48,3 +48,19 @@
     background-color: blue; 
     color: white;
 }
+
+.box{
+    width: 100px;
+    height: 20px;
+    background-color: blue;
+    margin: 10px;
+}
+
+button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: yellow;
+    cursor: pointer;
+}
